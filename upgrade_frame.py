@@ -2,12 +2,13 @@ import tkinter as tk
 import tkinter.ttk as ttk
 from tkinter import PhotoImage
 from tkinter.ttk import Label, Style
+from PIL import ImageTk, Image
 
 
 class UpgradeFrame:
     def __init__(self, base_frame):
         # Side frame, upgrade prompt
-        upgrade_frame = ttk.Frame(base_frame, width=360, height=600, padding=[50, 100, 50, 96], style='TFrame')
+        upgrade_frame = ttk.Frame(base_frame, width=360, height=600, padding=[12, 12, 12, 0], style='TFrame')
         upgrade_frame.grid(column=0, row=0)
         upgrade_frame.rowconfigure(0, weight=1)
         upgrade_frame.columnconfigure(0, weight=1)
@@ -17,8 +18,8 @@ class UpgradeFrame:
         cyl_label.grid(column=0, columnspan=3, row=0)
 
         # Add diamond image and center
-        diamond_img: PhotoImage = PhotoImage(name='diamond', file='./assets/images/diamond.png')
-        diamond_label: Label = ttk.Label(upgrade_frame, image=diamond_img, justify='center')
+        self.diamond_img: PhotoImage = ImageTk.PhotoImage(image=Image.open(fp='./assets/images/diamond.png'))
+        diamond_label: Label = ttk.Label(upgrade_frame, image=self.diamond_img, justify='center', compound='image')
         diamond_label.grid(column=0, columnspan=3, row=1)
 
         # Add call to action text
@@ -28,18 +29,18 @@ class UpgradeFrame:
         call_action_label.grid(column=0, columnspan=3, row=2)
 
         # Add access image and center
-        access_img: PhotoImage = PhotoImage(name='access', file='./assets/images/access.png')
-        access_label: Label = ttk.Label(upgrade_frame, image=access_img, justify='center')
+        self.access_img: PhotoImage = PhotoImage(file='./assets/images/access.png')
+        access_label: Label = ttk.Label(upgrade_frame, image=self.access_img, justify='center', compound='top', text='Unlimited device access')
         access_label.grid(column=0, row=4)
 
         # Add sharing image and center
-        sharing_img: PhotoImage = PhotoImage(name='sharing', file='./assets/images/sharing.png')
-        sharing_label: Label = ttk.Label(upgrade_frame, image=sharing_img, justify='center')
+        self.sharing_img: PhotoImage = PhotoImage(name='sharing', file='./assets/images/sharing.png')
+        sharing_label: Label = ttk.Label(upgrade_frame, image=self.sharing_img, justify='center', compound='top', text='One-to-many sharing')
         sharing_label.grid(column=1, row=4)
 
         # Add support image and center
-        support_img: PhotoImage = PhotoImage(name='support', file='./assets/images/support.png')
-        support_label: Label = ttk.Label(upgrade_frame, image=support_img, justify='center')
+        self.support_img: PhotoImage = PhotoImage(name='support', file='./assets/images/support.png')
+        support_label: Label = ttk.Label(upgrade_frame, image=self.support_img, justify='center', compound='top', text='Direct line to support')
         support_label.grid(column=2, row=4)
 
         # Add upgrade button
@@ -53,3 +54,7 @@ class UpgradeFrame:
         # Add dismiss button
         dismiss_button = ttk.Button(upgrade_frame, text=f'Dismiss')
         dismiss_button.grid(column=0, columnspan=3, row=6)
+
+
+
+

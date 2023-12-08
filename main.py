@@ -12,21 +12,23 @@ root.columnconfigure(0, weight=1)
 root.rowconfigure(0, weight=1)
 
 style = Style()
-style.theme_use('classic')
+style.theme_use('default')
 style.configure('Red.TButton', background='#d32d27')
 style.configure('TFrame', background='white')
 style.configure('TLabel', font='TimesNewRoman', background='white')
 
-base_frame = ttk.Frame(root)
+base_frame = ttk.Frame(root, width=735, height=600,)
 base_frame.grid()
 
-MainFrame(base_frame)
-UpgradeFrame(base_frame)
+mf = MainFrame(base_frame)
+
+# separator = ttk.Separator(base_frame, orient='vertical')
+# separator.grid(row=0, column=1,  rowspan=2)
+
+uf = UpgradeFrame(base_frame)
 
 
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     root.mainloop()
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
