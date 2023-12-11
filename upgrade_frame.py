@@ -52,7 +52,7 @@ class UpgradeFrame:
         # Add upgrade button
         self.upgrade_button = ttk.Button(self.frame, cursor='hand2', text=f'Go premium for only ${3:.2f}/month',
                                          style='Red.TButton')
-        self.upgrade_button.configure(default='normal', padding=0)
+        self.upgrade_button.configure(default='normal', padding=0, )
         self.upgrade_button.grid(column=0, columnspan=3, row=5, pady=20, ipadx=20, ipady=10)
 
         # Add dismiss button

@@ -14,7 +14,7 @@ style = Style()
 tab_font = tk.font.Font(family='Times', name='tabfont', size=9, weight=tk.font.BOLD)
 
 style.theme_use('default')
-style.configure('Red.TButton', background='#d32d27')
+style.configure('Red.TButton', background='#d32d27' )
 style.configure('Upgrade.TFrame', background='white')
 style.configure('Main.TFrame', background='#f9fafb')
 style.configure('TLabel', font='TimesNewRoman', background='white')

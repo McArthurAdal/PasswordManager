@@ -1,6 +1,7 @@
 import tkinter as tk
 import tkinter.ttk as ttk
 from tkinter import PhotoImage
+from placeholder import PlaceholderEntry
 
 
 class MainFrame:
@@ -11,8 +12,8 @@ class MainFrame:
         self.main_frame = ttk.Frame(base_frame, style='Main.TFrame',width=375, height=600, padding=[12, 12, 12, 12])
         self.main_frame.grid(column=2, row=0, sticky='nswe')
 
-        self.searchText = tk.StringVar()
-        entry = ttk.Entry(self.main_frame, textvariable=self.searchText, width=30)
+        self.searchText = tk.StringVar(value="Search")
+        entry = PlaceholderEntry(self.main_frame, textvariable=self.searchText, width=30)
         entry.grid(row=0, column=0, sticky='nws')
 
         # TODO: Separate vault button and plus button
