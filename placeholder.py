@@ -16,6 +16,6 @@ class PlaceholderEntry(ttk.Entry):
             self.configure(foreground='black')
 
     def foc_out(self, *args):
-        if self.get() is None:
+        if self.get() is None or self.get().isspace():
             self.insert(0, "Search")
             self.configure(foreground='grey')
