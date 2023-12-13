@@ -1,10 +1,19 @@
 from tkinter import ttk
+import tkinter as tk
 
 
-# class MyStyle(ttk.Style):
-#     def __init__(self):
-style = ttk.Style()
-style.theme_use('classic')
-style.configure('Red.TButton', background='#d32d27')
-style.configure('TFrame', background='white')
-style.configure('TLabel', font='TimesNewRoman', background='white')
+class MyStyles(ttk.Style):
+    def __init__(self):
+        super().__init__()
+        tab_font = tk.font.Font(family='Times', name='tabfont', size=9, weight=tk.font.BOLD)
+
+        self.theme_use('default')
+        self.configure('Red.TButton', background='#d32d27')
+        self.configure('Upgrade.TFrame', background='white')
+        self.configure('Main.TFrame', background='#f9fafb')
+        self.configure('TLabel', font='TimesNewRoman', background='white')
+        self.configure('Caption.TLabel', wraplength=8)
+        self.configure('TNotebook.Tab', padding=[10], background='#f9fafb')
+        self.configure('TNotebook', background='#f9fafb')
+        self.map('TNotebook.Tab', font=[('selected', tab_font)])
+        self.map('TNotebook.Tab', background=[('active', '#e3e5e7')])
