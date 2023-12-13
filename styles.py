@@ -9,6 +9,7 @@ class MyStyles(ttk.Style):
 
         self.theme_use('default')
         self.configure('Red.TButton', background='#d32d27')
+        self.configure('Plus.TButton', background='blue', bordercolor  ='red')
         self.configure('Upgrade.TFrame', background='white')
         self.configure('Main.TFrame', background='#f9fafb')
         self.configure('TLabel', font='TimesNewRoman', background='white')

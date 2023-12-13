@@ -26,7 +26,7 @@ class MainFrame:
 
         # TODO: Remove plus button background
         self.plus_icon = PhotoImage(name='plus_icon', file='./assets/images/plus_png.png')
-        plus_label = ttk.Button(master=self.main_frame, image=['plus_icon'])
+        plus_label = ttk.Button(master=self.main_frame, image=['plus_icon'], style='Plus.TButton')
         plus_label.grid(row=0, column=2, sticky='ne')
 
         # TODO: Figure out why separators are small
