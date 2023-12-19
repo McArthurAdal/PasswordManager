@@ -15,9 +15,9 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QFrame, QLineEdit, QMainWindow,
-    QPushButton, QScrollArea, QSizePolicy, QStatusBar,
-    QTabWidget, QWidget)
+from PySide6.QtWidgets import (QApplication, QFrame, QLineEdit, QListView,
+    QMainWindow, QPushButton, QScrollArea, QSizePolicy,
+    QStatusBar, QTabWidget, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -101,7 +101,7 @@ class Ui_MainWindow(object):
         self.pushButton_2.setIcon(icon1)
         self.tabWidget = QTabWidget(self.centralwidget)
         self.tabWidget.setObjectName(u"tabWidget")
-        self.tabWidget.setGeometry(QRect(10, 60, 361, 461))
+        self.tabWidget.setGeometry(QRect(10, 70, 361, 451))
         self.tabWidget.setTabPosition(QTabWidget.North)
         self.tabWidget.setTabShape(QTabWidget.Triangular)
         self.tabWidget.setElideMode(Qt.ElideNone)
@@ -116,10 +116,22 @@ class Ui_MainWindow(object):
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
         self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 359, 439))
+        self.listView = QListView(self.scrollAreaWidgetContents)
+        self.listView.setObjectName(u"listView")
+        self.listView.setGeometry(QRect(-5, -9, 361, 441))
+        self.listView.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOn)
+        self.listView.setAutoScroll(True)
+        self.listView.setGridSize(QSize(1, 7))
+        self.listView.setViewMode(QListView.IconMode)
+        self.listView.setUniformItemSizes(True)
+        self.listView.setItemAlignment(Qt.AlignCenter)
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
         self.tabWidget.addTab(self.tab, "")
         self.tab_2 = QWidget()
         self.tab_2.setObjectName(u"tab_2")
+        self.listView_2 = QListView(self.tab_2)
+        self.listView_2.setObjectName(u"listView_2")
+        self.listView_2.setGeometry(QRect(25, 11, 261, 371))
         self.tabWidget.addTab(self.tab_2, "")
         self.tab_3 = QWidget()
         self.tab_3.setObjectName(u"tab_3")
@@ -134,7 +146,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.tabWidget.setCurrentIndex(0)
+        self.tabWidget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)

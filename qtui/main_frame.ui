@@ -359,9 +359,9 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>60</y>
+      <y>70</y>
       <width>361</width>
-      <height>461</height>
+      <height>451</height>
      </rect>
     </property>
     <property name="tabPosition">
@@ -371,7 +371,7 @@
      <enum>QTabWidget::Triangular</enum>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <property name="elideMode">
      <enum>Qt::ElideNone</enum>
@@ -407,6 +407,37 @@
          <height>439</height>
         </rect>
        </property>
+       <widget class="QListView" name="listView">
+        <property name="geometry">
+         <rect>
+          <x>-5</x>
+          <y>-9</y>
+          <width>361</width>
+          <height>441</height>
+         </rect>
+        </property>
+        <property name="verticalScrollBarPolicy">
+         <enum>Qt::ScrollBarAlwaysOn</enum>
+        </property>
+        <property name="autoScroll">
+         <bool>true</bool>
+        </property>
+        <property name="gridSize">
+         <size>
+          <width>1</width>
+          <height>7</height>
+         </size>
+        </property>
+        <property name="viewMode">
+         <enum>QListView::IconMode</enum>
+        </property>
+        <property name="uniformItemSizes">
+         <bool>true</bool>
+        </property>
+        <property name="itemAlignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
       </widget>
      </widget>
     </widget>
@@ -414,6 +445,16 @@
      <attribute name="title">
       <string>All Items</string>
      </attribute>
+     <widget class="QListView" name="listView_2">
+      <property name="geometry">
+       <rect>
+        <x>25</x>
+        <y>11</y>
+        <width>261</width>
+        <height>371</height>
+       </rect>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="tab_3">
      <attribute name="title">
