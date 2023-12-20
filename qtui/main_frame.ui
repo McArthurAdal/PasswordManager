@@ -431,11 +431,11 @@
      <attribute name="title">
       <string>Recent</string>
      </attribute>
-     <widget class="QListWidget" name="listWidget">
+     <widget class="QListView" name="listView_4">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>10</y>
+        <x>5</x>
+        <y>11</y>
         <width>341</width>
         <height>411</height>
        </rect>
